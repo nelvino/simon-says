@@ -22,23 +22,15 @@ function inputUsuario(e){
   const selectedColor = e.target.id;
   secuenciaUsuario.push(selectedColor);
 
-  if(selectedColor == secuenciaMaquina[secuenciaUsuario.length-1] && (secuenciaUsuario.length === secuenciaMaquina.length)){
-    turnoMaquina();
-  } else {
+  if(selectedColor !== secuenciaMaquina[secuenciaUsuario.length-1]){
     perdiste();
   }
 
-  // if(selectedColor !== secuenciaMaquina[secuenciaUsuario.length-1]){
-  //   perdiste();
-  // }
-
-  // if(secuenciaUsuario.length === secuenciaMaquina.length){
-  //   turnoMaquina();
-  // }
+  if(secuenciaUsuario.length === secuenciaMaquina.length){
+    turnoMaquina();
+  }
   
 };
-
-
 
 function getRandomColor(colores){
  return colores[Math.floor(Math.random() * colores.length)];
